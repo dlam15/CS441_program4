@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
@@ -61,6 +62,15 @@ public class MainActivity2 extends AppCompatActivity {
                     myList = temp;
                 }
                 refresh();
+            }
+        });
+
+        ImageButton back = (ImageButton) findViewById(R.id.imageButton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
