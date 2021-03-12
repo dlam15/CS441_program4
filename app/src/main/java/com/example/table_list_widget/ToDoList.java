@@ -12,28 +12,26 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class MainActivity2 extends AppCompatActivity {
+public class ToDoList extends AppCompatActivity {
 
     private ArrayList<String> myList = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecycleAdapter adapter;
+    private Tasks tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_to_do_list);
+        
+        tasks = tasks.getInstance(this);
+        myList = tasks.getTasks();
 
-        Bundle extra = getIntent().getExtras();
-        if (extra != null){
-            myList = extra.getStringArrayList("LIST");
-        }
-
-        Button add = (Button) findViewById(R.id.button2);
+        Button add = (Button) findViewById(R.id.addButton);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, AddList.class);
-                intent.putExtra("LIST", myList);
+                Intent intent = new Intent(ToDoList.this, AddList.class);
                 startActivity(intent);
             }
         });
@@ -43,33 +41,21 @@ public class MainActivity2 extends AppCompatActivity {
         refresh();
 
 
-        Button remove = (Button) findViewById(R.id.button3);
+        Button remove = (Button) findViewById(R.id.removeButton);
         remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 ArrayList<Integer> rem = adapter.getRemove();
-                if(!myList.isEmpty() && !rem.isEmpty()) {
-                    for (int i = 0; i < rem.size(); i++) {
-                        myList.set(rem.get(i), "");
-                    }
-                    ArrayList<String> temp = new ArrayList<>();
-                    for (int i = 0; i < myList.size(); i++) {
-                        if (!myList.get(i).isEmpty()) {
-                            temp.add(myList.get(i));
-                        }
-                    }
-                    myList = temp;
-                }
+                myList = tasks.removeTask(rem);
                 refresh();
             }
         });
 
-        ImageButton back = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton back = (ImageButton) findViewById(R.id.backButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                Intent intent = new Intent(ToDoList.this, MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -6,37 +6,151 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/notepadImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notepad" />
+
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/mainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:fontFamily="casual"
+        android:text="To-Do List"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/listButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Create List"
+        app:backgroundTint="#86B5EF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79"/>
+        app:layout_constraintTop_toBottomOf="@+id/mainCB7"
+        app:layout_constraintVertical_bias="0.19" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+    <CheckBox
+        android:id="@+id/mainCB1"
+        android:layout_width="195dp"
+        android:layout_height="44dp"
+        android:checked="false"
+        android:clickable="false"
+        android:fontFamily="casual"
+        android:text="Finish project"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65999997" />
-    <!--style="?android:attr/borderlessButtonStyle"/>-->
+        app:layout_constraintTop_toBottomOf="@+id/mainTitle"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <CheckBox
+        android:id="@+id/mainCB2"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:checked="false"
+        android:clickable="false"
+        android:fontFamily="casual"
+        android:text="Complete HW"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/mainCB1"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB1" />
+
+    <CheckBox
+        android:id="@+id/mainCB3"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:checked="false"
+        android:clickable="false"
+        android:fontFamily="casual"
+        android:text="Do laundry"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/mainCB2"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB2" />
+
+    <CheckBox
+        android:id="@+id/mainCB4"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:checked="false"
+        android:clickable="false"
+        android:fontFamily="casual"
+        android:text="Study for test"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB3"
+        app:layout_constraintStart_toStartOf="@+id/mainCB3"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB3" />
+
+    <CheckBox
+        android:id="@+id/mainCB5"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="2dp"
+        android:checked="false"
+        android:clickable="false"
+        android:fontFamily="casual"
+        android:text="Clean room"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB4"
+        app:layout_constraintStart_toStartOf="@+id/mainCB4"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB4" />
+
+    <CheckBox
+        android:id="@+id/mainCB6"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="2dp"
+        android:checked="false"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB5"
+        app:layout_constraintStart_toStartOf="@+id/mainCB5"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB5" />
+
+    <Button
+        android:id="@+id/hiddenButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="171dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainCB6"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/mainCB6"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB5"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <CheckBox
+        android:id="@+id/mainCB7"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="3dp"
+        android:checked="true"
+        android:fontFamily="casual"
+        android:text="Make To-Do List"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainCB6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/mainCB6"
+        app:layout_constraintTop_toBottomOf="@+id/mainCB6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class AddList extends AppCompatActivity {
 
     private ArrayList<String> myList;
+    private Tasks tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +29,21 @@ public class AddList extends AppCompatActivity {
         int height = display.heightPixels;
         getWindow().setLayout((int)(width*.6),(int)(height*.3));
 
-        Bundle extra = getIntent().getExtras();
-        if (extra != null){
-            myList = extra.getStringArrayList("LIST");
-        }
 
-        Button addTask = (Button) findViewById(R.id.button4);
+        tasks = tasks.getInstance(this);
+        myList = tasks.getTasks();
+
+        Button addTask = (Button) findViewById(R.id.submitButton);
         EditText editTask = (EditText) findViewById(R.id.editTask);
 
         addTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddList.this, MainActivity2.class);
-                String task = editTask.getText().toString();
-                if(!task.isEmpty()) {
-                    myList.add(task);
+                Intent intent = new Intent(AddList.this, ToDoList.class);
+                String newTask = editTask.getText().toString();
+                if(!newTask.isEmpty()) {
+                    tasks.addTask(newTask);
                 }
-                intent.putExtra("LIST", myList);
                 startActivity(intent);
             }
         });
