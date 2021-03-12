@@ -14,6 +14,8 @@ import java.util.Random;
 
 public class BkgAnimation extends View {
 
+    //Code based on https://medium.com/@patrick.elmquist/continuous-animation-using-timeanimator-5b8a903603fb
+
     private static class Circle{
         private float x;
         private float y;
@@ -30,7 +32,7 @@ public class BkgAnimation extends View {
         super(context);
     }
 
-    public BkgAnimation(Context context, AttributeSet attrs){
+    public BkgAnimation(Context context, AttributeSet attrs){ //Needed in order to run
         super(context,attrs);
     }
 
@@ -54,10 +56,10 @@ public class BkgAnimation extends View {
         super.onAttachedToWindow();
         timeAnimator = new TimeAnimator();
         timeAnimator.setTimeListener(new TimeAnimator.TimeListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT) // Needed for isLaidout
             @Override
             public void onTimeUpdate(TimeAnimator animation, long totalTime, long deltaTime) {
-                if(!isLaidOut()){
+                if(!isLaidOut()){ //Needed so that it ignores when screen is not set up yet
                     return;
                 }
                 update(deltaTime);
@@ -83,7 +85,7 @@ public class BkgAnimation extends View {
         }
     }
 
-
+    //Changes the radius of the circles based on how much time has passed
     private void update(float deltaMs){
         final float deltaSeconds = deltaMs / 1000f;
         final int width = getWidth();

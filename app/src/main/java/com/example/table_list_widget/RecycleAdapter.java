@@ -18,6 +18,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     private Context context;
     private ArrayList<Integer> remove = new ArrayList<>();
 
+    //RecycleView Adapter based on
+    //https://www.youtube.com/watch?v=18VcnYN5_LM
+    //https://www.youtube.com/watch?v=Vyqz_-sJGFk
+
     public RecycleAdapter(Context contextIn, ArrayList<String> textIn){
         context = contextIn;
         text = textIn;

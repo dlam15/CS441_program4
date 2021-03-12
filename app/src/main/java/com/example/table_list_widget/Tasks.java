@@ -17,6 +17,9 @@ public class Tasks {
     private Context context;
     private String filename = "tasks";
 
+    //Code based on https://developer.android.com/training/data-storage/app-specific
+
+    //Singleton class
     private Tasks(Context contextIn){
         context = contextIn;
         tasks = new ArrayList<>();
