@@ -20,13 +20,13 @@ To make the pop up window
 https://www.youtube.com/watch?v=fn5OlqQuOCk
 
 RecyclerView  
-https://www.youtube.com/watch?v=18VcnYN5_LM
-https://www.youtube.com/watch?v=Vyqz_-sJGFk
+https://www.youtube.com/watch?v=18VcnYN5_LM  
+https://www.youtube.com/watch?v=Vyqz_-sJGFk  
 https://developer.android.com/reference/android/widget/CheckBox
 
 Animated Background  
-https://medium.com/@patrick.elmquist/continuous-animation-using-timeanimator-5b8a903603fb
-https://github.com/patrick-elmquist/Demo-ContinuousRandomizedAnimation/blob/master/app/src/main/java/com/patrickiv/demo/continuousanimationdemo/StarAnimationView.java
+https://medium.com/@patrick.elmquist/continuous-animation-using-timeanimator-5b8a903603fb  
+https://github.com/patrick-elmquist/Demo-ContinuousRandomizedAnimation/blob/master/app/src/main/java/com/patrickiv/demo/continuousanimationdemo/StarAnimationView.java  
 https://developer.android.com/reference/android/graphics/Paint
 https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
 
